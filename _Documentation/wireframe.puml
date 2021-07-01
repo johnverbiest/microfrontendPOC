@@ -1,0 +1,18 @@
+﻿@startsalt
+scale 2
+{
+    {* ContentMenu1 FixMenu1 ContentMenu2}
+    {
+        {+ ContentMenu1
+           ContentMenu2
+           ContentMenu3} | 
+        {+
+            Bla bla bla
+            [Button]
+            Bla bla bla
+             
+        }
+    }
+    {+ FooterFrontend spaning entire width}
+}
+@endsalt
