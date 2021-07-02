@@ -1,0 +1,9 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="StartCompleteEnvironment" type="CompoundRunConfigurationType">
+    <toRun name="start" type="js.build_tools.npm" />
+    <toRun name="Footer" type="LaunchSettings" />
+    <toRun name="Frame" type="LaunchSettings" />
+    <toRun name="Main" type="LaunchSettings" />
+    <method v="2" />
+  </configuration>
+</component>
