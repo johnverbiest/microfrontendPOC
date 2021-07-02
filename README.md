@@ -56,7 +56,7 @@ Simple javascript without any inter-communication with other frontends
 ### Main
 
 Renders a simple page, sends out signals to change menu items and has a
-button that writes an event to application insights. 
+button that does a weather forecast.
 
 ### Frame
 
