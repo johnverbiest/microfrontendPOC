@@ -59,7 +59,8 @@ namespace Footer
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
+                    // manually run 'yarn start:standalone --port 9001' to make this thing work
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:9001");
                 }
             });
         }
