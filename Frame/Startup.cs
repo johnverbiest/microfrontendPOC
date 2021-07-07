@@ -44,6 +44,13 @@ namespace Frame
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+            
+            app.Use(async (ctx, next) => 
+            {
+                ctx.Response.Headers.Add("Access-Control-Allow-Origin", 
+                    "*");
+                await next();
+            });
 
             app.UseEndpoints(endpoints =>
             {
