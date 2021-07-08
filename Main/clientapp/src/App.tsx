@@ -26,7 +26,7 @@ function App() {
     }
   });
 
-  setTimeout(() => window.dispatchEvent(event), 3000);
+  setTimeout(() => window.dispatchEvent(event), 400);
 
   return (
     <div>
