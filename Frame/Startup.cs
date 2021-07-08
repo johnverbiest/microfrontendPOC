@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
 namespace Frame
 {
@@ -23,6 +25,9 @@ namespace Frame
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "my-app/dist"; });
+
+            services.AddOcelot();
+            services.AddApplicationInsightsTelemetry();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,10 +49,10 @@ namespace Frame
             app.UseSpaStaticFiles();
 
             app.UseRouting();
-            
-            app.Use(async (ctx, next) => 
+
+            app.Use(async (ctx, next) =>
             {
-                ctx.Response.Headers.Add("Access-Control-Allow-Origin", 
+                ctx.Response.Headers.Add("Access-Control-Allow-Origin",
                     "*");
                 await next();
             });
@@ -59,6 +64,8 @@ namespace Frame
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
+            app.MapWhen((httpContext) => httpContext.Request.Path.Value?.StartsWith("/api/") ?? false, builder => builder.UseOcelot().Wait());
+
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "my-app";
@@ -68,7 +75,9 @@ namespace Frame
                     // manually run yarn start to make this thing work
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:9000");
                 }
+
             });
+
         }
     }
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function App() {
   
   const buttonClick = () => {
-      fetch("/WeatherForecast/")
+      fetch("/api/main/WeatherForecast/")
           .then(res => res.text())
           .then(result => window.alert(result))
   } 

@@ -1,0 +1,19 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/main/{url}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5101
+        }
+      ],
+      "UpstreamPathTemplate": "/api/main/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    }
+  ], 
+  "GlobalConfiguration": {
+    "BaseUrl" :  "https://localhost:5001" 
+  }
+}
