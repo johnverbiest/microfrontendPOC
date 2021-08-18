@@ -1,10 +1,13 @@
 ﻿<component name="ProjectRunConfigurationManager">
   <configuration default="false" name="StartCompleteEnvironment" type="CompoundRunConfigurationType">
-    <toRun name="Frame Start" type="js.build_tools.npm" />
-    <toRun name="Footer SingleSpa" type="js.build_tools.npm" />
+    <toRun name="Header" type="LaunchSettings" />
     <toRun name="Footer" type="LaunchSettings" />
-    <toRun name="Main" type="LaunchSettings" />
     <toRun name="Frame" type="LaunchSettings" />
+    <toRun name="Header SingleSpa" type="js.build_tools.npm" />
+    <toRun name="Main" type="LaunchSettings" />
+    <toRun name="Footer SingleSpa" type="js.build_tools.npm" />
+    <toRun name="Frame Start" type="js.build_tools.npm" />
+    <toRun name="Main SingleSpa" type="js.build_tools.npm" />
     <method v="2" />
   </configuration>
 </component>
